@@ -10,6 +10,12 @@ const inputAddress = document.querySelector("#address");
 const inputServices = document.querySelector("#services");
 const input = document.querySelector(".input");
 
+const inputNameClass = document.querySelector(".input__name");
+const inputEmailClass = document.querySelector(".input__email");
+const inputTelClass = document.querySelector(".input__tel");
+const inputAddressClass = document.querySelector(".input__address");
+const inputServicesClass = document.querySelector(".input__services");
+
 const cardLeftSide = document.createElement("div");
 const cardRightSide = document.createElement("div");
 const card = document.createElement("div");
@@ -18,6 +24,7 @@ const email = document.createElement("a");
 const phone = document.createElement("a");
 const address = document.createElement("p");
 const services = document.createElement("p");
+const fieldEmpty = document.createElement("p");
 
 cardLeftSide.classList = "card__left";
 cardRightSide.classList = "card__right";
@@ -29,6 +36,8 @@ address.classList = "card__text";
 services.classList = "card__text";
 email.href = "#";
 phone.href = "#";
+fieldEmpty.classList = "card__error";
+fieldEmpty.textContent = "This Field Is Empty";
 //Prepending into parent classes
 
 input.append(card);
@@ -53,16 +62,28 @@ function createCard() {
 //Creating local storage
 
 window.addEventListener("DOMContentLoaded", () => {
-  fullName.textContent = window.localStorage.getItem("Full-name");
-  email.textContent = window.localStorage.getItem("Email");
-  phone.textContent = window.localStorage.getItem("Phone");
-  address.textContent = window.localStorage.getItem("Address");
-  services.textContent = window.localStorage.getItem("Services");
   inputFullName.value = window.localStorage.getItem("Full-name");
   inputEmail.value = window.localStorage.getItem("Email");
   inputPhone.value = window.localStorage.getItem("Phone");
   inputAddress.value = window.localStorage.getItem("Address");
   inputServices.value = window.localStorage.getItem("Services");
+
+  createCard();
 });
 
+//Checking inputs
+function checkingValues() {
+  if (inputFullName.value === "") {
+    inputNameClass.prepend(fieldEmpty);
+  } else if (inputEmail.value === "") {
+    inputEmailClass.prepend(fieldEmpty);
+  } else if (inputPhone.value === "") {
+    inputTelClass.prepend(fieldEmpty);
+  } else if (inputAddress.value === "") {
+    inputAddressClass.prepend(fieldEmpty);
+  } else if (inputServices.value === "") {
+    inputServicesClass.prepend(fieldEmpty);
+  }
+}
+btnCreate.addEventListener("click", checkingValues);
 btnCreate.addEventListener("click", createCard);
