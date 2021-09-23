@@ -154,3 +154,6 @@ img {
   border-radius: 50%;
   height: 15rem;
 }
+.hidden {
+  display: none;
+}

@@ -103,24 +103,19 @@ function checkingValues() {
 }
 function removingErrors() {
   if (inputFullName.value !== "") {
-    fieldEmpty1.textContent = "";
-    inputNameClass.append(fieldEmpty1);
+    fieldEmpty1.remove();
   }
   if (inputEmail.value !== "") {
-    fieldEmpty2.textContent = "";
-    inputEmailClass.append(fieldEmpty2);
+    fieldEmpty2.remove();
   }
   if (inputPhone.value !== "") {
-    fieldEmpty3.textContent = "";
-    inputTelClass.append(fieldEmpty3);
+    fieldEmpty3.remove();
   }
   if (inputAddress.value !== "") {
-    fieldEmpty4.textContent = "";
-    inputAddressClass.append(fieldEmpty4);
+    fieldEmpty4.remove();
   }
   if (inputServices.value !== "") {
-    fieldEmpty5.textContent = "";
-    inputServicesClass.append(fieldEmpty5);
+    fieldEmpty5.remove();
   }
 }
 function addingItems() {
