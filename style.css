@@ -47,7 +47,6 @@ input {
   border: none;
   padding: 0.5rem;
   font-family: inherit;
-  font-size: 1.5rem;
   border-bottom: 3px solid transparent;
   box-shadow: 0 0.1rem 0.2rem black;
 }
@@ -65,7 +64,7 @@ input:focus:invalid {
   margin-top: 2rem;
   width: 15rem;
   color: black;
-  background-color: #adb5bd;
+  background-color: #ef233c;
   border: none;
   height: 4rem;
   border-radius: 5rem;
@@ -84,9 +83,13 @@ input:focus:invalid {
 .input__label {
   font-size: 2rem;
   display: block;
+  padding: 0.5rem;
 }
 .input__field {
-  width: 20rem;
+  width: 40rem;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border-radius: 2rem;
 }
 /* ANCHOR TAGS */
 a {
@@ -109,17 +112,43 @@ a:hover {
   border: 1px solid black;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  margin-left: 2rem;
+  height: 30rem;
+  /* background: rgb(255, 253, 253);
+  background: linear-gradient(
+    210deg,
+    rgba(255, 253, 253, 1) 0%,
+    rgba(189, 224, 254, 1) 43%,
+    rgba(255, 200, 221, 1) 97%
+  ); */
+  /* background: rgb(255, 253, 253);
+  background: linear-gradient(
+    132deg,
+    rgba(255, 253, 253, 1) 0%,
+    rgba(189, 224, 254, 1) 43%,
+    rgba(255, 255, 255, 1) 100%
+  ); */
+  background: rgb(255, 173, 173);
+  background: linear-gradient(
+    132deg,
+    rgba(255, 173, 173, 1) 16%,
+    rgba(253, 255, 182, 1) 59%,
+    rgba(202, 255, 191, 1) 87%
+  );
+  border-radius: 2rem;
 }
 .card__left {
 }
 .card__right {
+  padding-left: 1rem;
 }
 .card__text {
   padding: 1.5rem;
 }
 .card__error {
   font-weight: 200;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  padding-left: 0.5rem;
 }
 img {
   border-radius: 50%;

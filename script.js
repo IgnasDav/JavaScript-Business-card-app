@@ -31,9 +31,6 @@ const fieldEmpty4 = document.createElement("p");
 const fieldEmpty5 = document.createElement("p");
 const img = document.createElement("img");
 
-img.src =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRcMpmSEWgxC5IigMmd69BzXP4oZPEA4AZWQ&usqp=CAU";
-img.alt = "Card Logo";
 cardLeftSide.classList = "card__left";
 cardRightSide.classList = "card__right";
 card.classList = "card";
@@ -55,7 +52,6 @@ fieldEmpty3.textContent = "Please enter your phone";
 fieldEmpty4.textContent = "Please enter your address";
 fieldEmpty5.textContent = "Please enter your services";
 //Prepending into parent classes
-
 input.append(card);
 card.prepend(cardLeftSide, cardRightSide);
 cardLeftSide.prepend(img, fullName, services);
@@ -127,7 +123,24 @@ function removingErrors() {
     inputServicesClass.append(fieldEmpty5);
   }
 }
+function addingItems() {
+  if (
+    inputFullName.value !== "" &&
+    inputEmail.value !== "" &&
+    inputPhone.value !== "" &&
+    inputAddress.value !== "" &&
+    inputServices.value !== ""
+  ) {
+    img.alt = "Card Logo";
+    img.src =
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRcMpmSEWgxC5IigMmd69BzXP4oZPEA4AZWQ&usqp=CAU";
+  } else {
+    img.src = "";
+    img.alt = "";
+  }
+}
 
 btnCreate.addEventListener("click", removingErrors);
 btnCreate.addEventListener("click", checkingValues);
+btnCreate.addEventListener("click", addingItems);
 btnCreate.addEventListener("click", createCard);
