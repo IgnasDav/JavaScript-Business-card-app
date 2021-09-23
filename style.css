@@ -1,6 +1,127 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Gemunu Libre", sans-serif;
+}
+body {
+  height: 100vh;
+  background-color: #edf2f4;
+  padding: 5rem 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* INPUTS */
+.input {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 2px solid #8d99ae;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem #dee2e6;
+  padding: 2rem 2rem;
+}
+.input__name {
+  grid-column: 1 / 2;
+}
+.input__email {
+  grid-column: 1 / 2;
+}
+.input__tel {
+  grid-column: 1 / 2;
+}
+.input__address {
+  grid-column: 1 / 2;
+}
+.input__services {
+  grid-column: 1 / 2;
+}
+input {
+  border-radius: 0.2rem;
+  border: none;
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: 1.5rem;
+  border-bottom: 3px solid transparent;
+  box-shadow: 0 0.1rem 0.2rem black;
+}
+input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(black, 0.1);
+  border-bottom: 3px solid #38b000;
+}
+input:focus:invalid {
+  border-bottom: 3px solid #dc2f02;
+}
+.input__btn {
+  grid-column: 1 / 2;
+  justify-self: flex-start;
+  margin-top: 2rem;
+  width: 15rem;
+  color: black;
+  background-color: #adb5bd;
+  border: none;
+  height: 4rem;
+  border-radius: 5rem;
+  font-family: inherit;
+  font-size: 2rem;
+  transition: all 0.2s;
+}
+.input__btn:hover {
+  box-shadow: 0 0.1rem 0.5rem black;
+  transform: translateY(-3px);
+}
+.input__btn:active {
+  box-shadow: 0 0.1rem 0.2rem black;
+  transform: translateY(-1px);
+}
+.input__label {
+  font-size: 2rem;
+  display: block;
+}
+.input__field {
+  width: 20rem;
+}
+/* ANCHOR TAGS */
 a {
   display: block;
+  text-decoration: none;
+  color: black;
 }
 a:nth-of-type(2) {
   padding-top: 0.5rem;
+}
+a:hover {
+  box-shadow: 0 0.1rem 0.5rem black;
+}
+/* CARDS */
+.card {
+  grid-row: 1 / 7;
+  grid-column: 2 / 3;
+  font-size: 2rem;
+  padding: 2rem 2.5rem;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.card__left {
+}
+.card__right {
+}
+.card__text {
+  padding: 1.5rem;
+}
+.card__error {
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+img {
+  border-radius: 50%;
+  height: 15rem;
 }

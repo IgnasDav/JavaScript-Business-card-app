@@ -24,8 +24,16 @@ const email = document.createElement("a");
 const phone = document.createElement("a");
 const address = document.createElement("p");
 const services = document.createElement("p");
-const fieldEmpty = document.createElement("p");
+const fieldEmpty1 = document.createElement("p");
+const fieldEmpty2 = document.createElement("p");
+const fieldEmpty3 = document.createElement("p");
+const fieldEmpty4 = document.createElement("p");
+const fieldEmpty5 = document.createElement("p");
+const img = document.createElement("img");
 
+img.src =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRcMpmSEWgxC5IigMmd69BzXP4oZPEA4AZWQ&usqp=CAU";
+img.alt = "Card Logo";
 cardLeftSide.classList = "card__left";
 cardRightSide.classList = "card__right";
 card.classList = "card";
@@ -36,13 +44,21 @@ address.classList = "card__text";
 services.classList = "card__text";
 email.href = "#";
 phone.href = "#";
-fieldEmpty.classList = "card__error";
-fieldEmpty.textContent = "This Field Is Empty";
+fieldEmpty1.classList = "card__error";
+fieldEmpty2.classList = "card__error";
+fieldEmpty3.classList = "card__error";
+fieldEmpty4.classList = "card__error";
+fieldEmpty5.classList = "card__error";
+fieldEmpty1.textContent = "Please enter your full name";
+fieldEmpty2.textContent = "Please enter your email";
+fieldEmpty3.textContent = "Please enter your phone";
+fieldEmpty4.textContent = "Please enter your address";
+fieldEmpty5.textContent = "Please enter your services";
 //Prepending into parent classes
 
 input.append(card);
 card.prepend(cardLeftSide, cardRightSide);
-cardLeftSide.prepend(fullName, services);
+cardLeftSide.prepend(img, fullName, services);
 cardRightSide.prepend(email, phone, address);
 
 // Displaying values into the screen
@@ -74,16 +90,44 @@ window.addEventListener("DOMContentLoaded", () => {
 //Checking inputs
 function checkingValues() {
   if (inputFullName.value === "") {
-    inputNameClass.prepend(fieldEmpty);
-  } else if (inputEmail.value === "") {
-    inputEmailClass.prepend(fieldEmpty);
-  } else if (inputPhone.value === "") {
-    inputTelClass.prepend(fieldEmpty);
-  } else if (inputAddress.value === "") {
-    inputAddressClass.prepend(fieldEmpty);
-  } else if (inputServices.value === "") {
-    inputServicesClass.prepend(fieldEmpty);
+    inputNameClass.append(fieldEmpty1);
+  }
+  if (inputEmail.value === "") {
+    inputEmailClass.append(fieldEmpty2);
+  }
+  if (inputPhone.value === "") {
+    inputTelClass.append(fieldEmpty3);
+  }
+  if (inputAddress.value === "") {
+    inputAddressClass.append(fieldEmpty4);
+  }
+  if (inputServices.value === "") {
+    inputServicesClass.append(fieldEmpty5);
   }
 }
+function removingErrors() {
+  if (inputFullName.value !== "") {
+    fieldEmpty1.textContent = "";
+    inputNameClass.append(fieldEmpty1);
+  }
+  if (inputEmail.value !== "") {
+    fieldEmpty2.textContent = "";
+    inputEmailClass.append(fieldEmpty2);
+  }
+  if (inputPhone.value !== "") {
+    fieldEmpty3.textContent = "";
+    inputTelClass.append(fieldEmpty3);
+  }
+  if (inputAddress.value !== "") {
+    fieldEmpty4.textContent = "";
+    inputAddressClass.append(fieldEmpty4);
+  }
+  if (inputServices.value !== "") {
+    fieldEmpty5.textContent = "";
+    inputServicesClass.append(fieldEmpty5);
+  }
+}
+
+btnCreate.addEventListener("click", removingErrors);
 btnCreate.addEventListener("click", checkingValues);
 btnCreate.addEventListener("click", createCard);
